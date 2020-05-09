@@ -5,9 +5,9 @@
 # echo "2 review 30 min later:"`date +%Y%m%d`
 # echo "3 review 12 h   later:"`date +%Y%m%d`
 echo "TODO:"
-echo "3 review 12 hours later on "`date +%Y%m%d`" ⇒ "
-echo "4 review  1 days  later on "`date -d "1 days "  "+%Y%m%d"`" ⇒ "
-echo "5 review  2 days  later on "`date -d "2 days "  "+%Y%m%d"`" ⇒ "
-echo "6 review  4 days  later on "`date -d "4 days "  "+%Y%m%d"`" ⇒ "
-echo "7 review  7 days  later on "`date -d "7 days "  "+%Y%m%d"`" ⇒ "
-echo "8 review 15 days  later on "`date -d "15 days "  "+%Y%m%d"`" ⇒ "
+echo "3 review 12 hours later on:"`date +%Y%m%d`" ⇒ "
+echo "4 review  1 days  later on:"`date -d "1 days "  "+%Y%m%d"`" ⇒ "
+echo "5 review  2 days  later on:"`date -d "2 days "  "+%Y%m%d"`" ⇒ "
+echo "6 review  4 days  later on:"`date -d "4 days "  "+%Y%m%d"`" ⇒ "
+echo "7 review  7 days  later on:"`date -d "7 days "  "+%Y%m%d"`" ⇒ "
+echo "8 review 15 days  later on:"`date -d "15 days "  "+%Y%m%d"`" ⇒ "
