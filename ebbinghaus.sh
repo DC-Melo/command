@@ -13,8 +13,6 @@ echo -e "DAWN → SUNRISE → MORNING → NOON → AFTERNOON → SUNSET → EVEN
 echo -e "●: ⇒ "
 echo -e "●: ⇒ "
 echo -e "●: ⇒ "
-echo -e ""
-                                          
 echo -e -n "TODO:"                              
 echo -e -n "@"`date -d $today +%Y%m%d`" → ? → "
 echo -e -n "@"`date -d $today +%Y%m%d`" → ? → "
