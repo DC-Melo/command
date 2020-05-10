@@ -32,5 +32,22 @@ fi
 # echo '<img src="'"$dpj/006-write/picture/$pngfilename"'" alt="'""'" />' >> $blogfile.html
 echo '<img src="'"$dpj"'/006-write/picutre/'"$pngfilename"'" alt="'"$1"'" />' >> $blogfile
 
+read -r -p "do you want to edit the picture? [Y/n] " input
+case $input in
+    [yY][eE][sS]|[yY])
+        echo "Yes"
+        shutter "$dpj/006-write/picutre/$pngfilename"
+        exit 1
+        ;;
+
+    [nN][oO]|[nN])
+        echo "No"
+        exit 1
+        ;;
+
+    *)
+        echo "other input..."
+        ;;
+esac
 
 
