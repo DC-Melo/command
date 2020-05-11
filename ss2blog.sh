@@ -24,7 +24,7 @@ if [  -n "$(uname -a | grep -i ubuntu)" ]; then
 elif [  -n "$(uname -a | grep -i centos)" ]; then
     yum update
 elif [  -n "$(uname -a | grep -i darwin)" ]; then
-    brew install mutt
+    screencapture -T 3 -t png $dpj/006-write/picutre/$pngfilename
 else
     echo Unknown system
 fi
