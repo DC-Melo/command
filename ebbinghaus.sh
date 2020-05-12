@@ -35,7 +35,6 @@ if [  -n "$(uname -a | grep -i ubuntu)" ]; then
     echo -e -n "@"`date -d "$DateDay  0 days" "+%Y%m%d"`" →  ?  → "
     echo -e -n "@"`date -d "$DateDay  0 days" "+%Y%m%d"`" →  ?  → "
     echo -e -n "@"`date -d "$DateDay  0 days" "+%Y%m%d"`" →  ?  → "
-    echo -e -n "@"`date -d "$DateDay  0 days" "+%Y%m%d"`" →  ?  → "
     echo -e    "@"`date -d "$DateDay  1 days" "+%Y%m%d"`" →  ?  → "
     echo -e -n "    :"
     echo -e -n "@"`date -d "$DateDay  2 days" "+%Y%m%d"`" →  ?  → "
