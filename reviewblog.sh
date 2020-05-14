@@ -19,6 +19,6 @@ else
     today="@$1"
 fi
 # echo $today
-reviewfile=`grep -l $today  $dbg/*`
+reviewfile=`grep -l $today  $dbg/* |sort -r`
 # echo $reviewfile
 vim $reviewfile
