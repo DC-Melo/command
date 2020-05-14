@@ -74,4 +74,5 @@ else
 fi
 blogname=$RemainingDay-$WeekDay-$DateDay
 echo "mutt -s $blogname melo.dachor@gmail.com < $dbg/$blogname"
-echo ""
+echo " "
+
