@@ -1,11 +1,24 @@
 #!/usr/bin/env bash
+# pre-treatment platform
+if [  -n "$(uname -a | grep -i ubuntu)" ]; then
+    echo ubuntu
+elif [  -n "$(uname -a | grep -i centos)" ]; then
+    echo centos
+elif [  -n "$(uname -a | grep -i darwin)" ]; then
+    echo mac
+elif [  -n "$(uname -a | grep -i android)" ]; then
+    echo android
+    export dbg=$HOME/blog
+else
+    echo Unknown system
+fi
 if [ ! -n "$1" ] ;then
     today=`date --date="1 days ago" +%Y%m%d`
 else
     today=$1
 fi
 
-if [  -n "$(uname -a | grep -i ubuntu)" ]; then
+if [  -n "$(uname -a | grep -i -E 'ubuntu|android')" ]; then
     begin_second=`date --date="19851018" +%s`
     now_second=`date -d "$today" +%s`
     WeekDay=`date -d $today +%V%a%y`

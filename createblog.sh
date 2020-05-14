@@ -5,7 +5,7 @@ else
     today=$1
 fi
 
-if [  -n "$(uname -a | grep -i ubuntu)" ]; then
+if [  -n "$(uname -a | grep -i -E 'ubuntu|android')" ]; then
     begin_second=`date --date="19851018" +%s`
     now_second=`date -d "$today" +%s`
     WeekDay=`date -d $today +%V%a%y`
