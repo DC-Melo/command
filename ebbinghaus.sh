@@ -20,7 +20,8 @@ else
     today=$1
 fi
 
-if [  -n "$(uname -a | grep -i 'ubuntu|android')" ]; then
+# if [  -n "$(uname -a | grep -i 'ubuntu|android')" ]; then
+if [  -n "$(uname -a | grep -i ubuntu)" ]; then
     begin_second=`date --date="19851018" +%s`
     now_second=`date -d "$today" +%s`
     WeekDay=`date -d $today +%V%a%y`
@@ -32,7 +33,7 @@ elif [  -n "$(uname -a | grep -i darwin)" ]; then
     now_second=`date -j -f "%Y%m%d" $today "+%s"`
     WeekDay=`date -j -f "%Y%m%d" $today +%V%a%y`
     DateDay=`date  -j -f "%Y%m%d" $today +%Y%m%d`
-if [  -n "$(uname -a | grep -i android)" ]; then
+elif [  -n "$(uname -a | grep -i android)" ]; then
     begin_second=`date --date="19851018" +%s`
     now_second=`date -d "$today" +%s`
     WeekDay=`date -d $today +%V%a%y`
