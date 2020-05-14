@@ -25,7 +25,8 @@ RemainingDay=$((12578*2-$LiveDay))
 
 echo Today is: $today $WeekDay, Live days: $LiveDay days,Remaining Days: $RemainingDay days
 echo $RemainingDay-$WeekDay-$DateDay
-touch $RemainingDay-$WeekDay-$DateDay
+# touch $RemainingDay-$WeekDay-$DateDay
 
+ebbinghaus.sh $today > $RemainingDay-$WeekDay-$DateDay
 
 
