@@ -85,4 +85,5 @@ echo "NOON:"
 echo "AFTERNOON:"
 echo "SUNSET:"
 echo "EVENING:" 
+echo "NOTE:" 
 
