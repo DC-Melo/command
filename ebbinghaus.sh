@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # pre-treatment platform
 if [  -n "$(uname -a | grep -i ubuntu)" ]; then
     echo ubuntu
@@ -74,5 +74,4 @@ else
 fi
 blogname=$RemainingDay-$WeekDay-$DateDay
 echo "mutt -s $blogname melo.dachor@gmail.com < $dbg/$blogname"
-echo " "
-
+echo ""
