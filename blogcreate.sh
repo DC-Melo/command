@@ -27,3 +27,5 @@ echo Today is: $today $WeekDay, Live days: $LiveDay days,Remaining Days: $Remain
 echo $RemainingDay-$WeekDay-$DateDay
 touch $RemainingDay-$WeekDay-$DateDay
 
+
+
