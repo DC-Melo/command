@@ -1,19 +1,19 @@
 #!/usr/bin/env bash
 # pre-treatment platform
 if [  -n "$(uname -a | grep -i ubuntu)" ]; then
-    # echo ubuntu
+    # echo create ebbinghaus blog format by ubuntu
     :
 elif [  -n "$(uname -a | grep -i centos)" ]; then
-    # echo centos
+    # echo create ebbinghaus blog format by centos
     :
 elif [  -n "$(uname -a | grep -i darwin)" ]; then
-    # echo mac
+    # echo create ebbinghaus blog format by mac
     :
 elif [  -n "$(uname -a | grep -i android)" ]; then
-    # echo android
+    # echo create ebbinghaus blog format by android
     export dbg=$HOME/blog
 else
-    echo Unknown system
+    echo Unknown system,check $0 shell
 fi
 # 第一个记忆周期是5分钟，第二个记忆周期是30分钟，第三个记忆周期是12小时。
 # 第四个记忆周期是1天，第五个记忆周期是2天，第六个记忆周期是4天，第七个记忆周期是7天，第八个记忆周期是15天

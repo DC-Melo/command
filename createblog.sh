@@ -11,14 +11,14 @@ if [  -n "$(uname -a | grep -i -E 'ubuntu|android')" ]; then
     WeekDay=`date -d $today +%V%a%y`
     DateDay=`date -d $today +%Y%m%d`
 elif [  -n "$(uname -a | grep -i centos)" ]; then
-    echo centos
+    echo centos system, check shell
 elif [  -n "$(uname -a | grep -i darwin)" ]; then
     begin_second=`date -jf %Y%m%d 19851018 +%s`
     now_second=`date -j -f "%Y%m%d" $today "+%s"`
     WeekDay=`date -j -f "%Y%m%d" $today +%V%a%y`
     DateDay=`date  -j -f "%Y%m%d" $today +%Y%m%d`
 else
-    echo Unknown system
+    echo Unknown system, check shell
 fi
 LiveDay=$((($now_second - $begin_second)/86400))
 RemainingDay=$((12578*2-$LiveDay))

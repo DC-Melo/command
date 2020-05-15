@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 # pre-treatment platform
 if [  -n "$(uname -a | grep -i ubuntu)" ]; then
-    echo ubuntu
+    echo send yestorday blog by ubuntu
 elif [  -n "$(uname -a | grep -i centos)" ]; then
-    echo centos
+    echo send yestorday blog by centos
 elif [  -n "$(uname -a | grep -i darwin)" ]; then
-    echo mac
+    echo send yestorday blog by mac
 elif [  -n "$(uname -a | grep -i android)" ]; then
-    echo android
+    echo send yestorday blog by android
     export dbg=$HOME/blog
 else
-    echo Unknown system
+    echo Unknown system,check $0 send yestorday blog shell
 fi
 if [ ! -n "$1" ] ;then
     today=`date --date="1 days ago" +%Y%m%d`
