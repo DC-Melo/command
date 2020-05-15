@@ -48,29 +48,29 @@ LiveDay=$((($now_second - $begin_second)/86400))
 RemainingDay=$((12578*2-$LiveDay))
 
 echo -e -n "TARGET:"
-echo -e "DAWN → SUNRISE → MORNING → NOON → AFTERNOON → SUNSET → EVENING → NIGHT"
+echo -e "DAWN → SUNRISE → MORNING → NOON → AFTERNOON → SUNSET → EVENING → NIGHT → @$today → ??? ⇒ "
 echo -e "●: ⇒ "
 echo -e "●: ⇒ "
 echo -e "●: ⇒ "
 echo -e -n "TODO:"                              
 if [  -n "$(uname -a | grep -i -E 'ubuntu|android')" ]; then
-    echo -e -n "@"`date -d "$DateDay  0 days" "+%Y%m%d"`" → ??? → "
     echo -e -n "@"`date -d "$DateDay  1 days" "+%Y%m%d"`" → ??? → "
     echo -e -n "@"`date -d "$DateDay  2 days" "+%Y%m%d"`" → ??? → "
     echo -e -n "@"`date -d "$DateDay  4 days" "+%Y%m%d"`" → ??? → "
     echo -e -n "@"`date -d "$DateDay  7 days" "+%Y%m%d"`" → ??? → "
     echo -e -n "@"`date -d "$DateDay 15 days" "+%Y%m%d"`" → ??? ⇒ "
+    echo -e -n "@"`date -d "$DateDay 31 days" "+%Y%m%d"`" → ??? ⇒ "
     echo ""
     # blogname=$((12578*2-$((($(date --date=$DateDay +%s)-$(date --date="19851018" +%s) )/86400))))-`date --date=$DateDay +%V%a%y`-`date --date=$DateDay +%Y%m%d`
 elif [  -n "$(uname -a | grep -i centos)" ]; then
     echo centos
 elif [  -n "$(uname -a | grep -i darwin)" ]; then
-    echo -e -n "@"`date -j  -v-0d -f "%Y%m%d" "$DateDay" "+%Y%m%d"`" → ??? → "
     echo -e -n "@"`date -j  -v-1d -f "%Y%m%d" "$DateDay" "+%Y%m%d"`" → ??? → "
     echo -e -n "@"`date -j  -v-2d -f "%Y%m%d" "$DateDay" "+%Y%m%d"`" → ??? → "
     echo -e -n "@"`date -j  -v-4d -f "%Y%m%d" "$DateDay" "+%Y%m%d"`" → ??? → "
     echo -e -n "@"`date -j  -v-7d -f "%Y%m%d" "$DateDay" "+%Y%m%d"`" → ??? → "
     echo -e -n "@"`date -j -v-15d -f "%Y%m%d" "$DateDay" "+%Y%m%d"`" → ??? → "
+    echo -e -n "@"`date -j -v-31d -f "%Y%m%d" "$DateDay" "+%Y%m%d"`" → ??? → "
     echo ""
     # blogname=$((12578*2-$((($(date --date=$today +%s)-$(date --date="19851018" +%s) )/86400))))-`date --date=$today +%V%a%y`-`date --date=$today +%Y%m%d`
 else
