@@ -47,7 +47,8 @@ if [  -n "$(uname -a | grep -i ubuntu)" ]; then
     alias duh1='du -h --max-depth=1'
     blogname=$((12578*2-$((($(date -d tomorrow +%s)-$(date --date="19851018" +%s) )/86400))))-`date -d tomorrow +%V%a%y`-`date -d tomorrow +%Y%m%d`
     blogfile=$dbg/$blogname
-    sh $dcm/createblog.sh   `date -d tomorrow +%Y%m%d`
+    # createblog.sh   `date -d tomorrow +%Y%m%d`
+    $dcm/ebbinghaus.sh `date -d tomorrow +%Y%m%d` > $blogfile
     # touch $blogfile
     export blogname=$((12578*2-$((($(date +%s)-$(date --date="19851018" +%s) )/86400))))-`date +%V%a%y`-`date +%Y%m%d`
     export blogfile=$dbg/$blogname
