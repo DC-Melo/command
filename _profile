@@ -25,9 +25,6 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
-_byobu_sourced=1 . /usr/bin/byobu-launch 2>/dev/null || true
-
-
 
 
 
@@ -44,30 +41,20 @@ export dtrash=$HOME/.local/share/Trash
 
 # add  alias by DC
 if [  -n "$(uname -a | grep -i ubuntu)" ]; then
-    alias duh1='du -h --max-depth=1'
-    blogname=$((12578*2-$((($(date -d tomorrow +%s)-$(date --date="19851018" +%s) )/86400))))-`date -d tomorrow +%V%a%y`-`date -d tomorrow +%Y%m%d`
-    blogfile=$dbg/$blogname
-    # createblog.sh   `date -d tomorrow +%Y%m%d`
-    $dcm/ebbinghaus.sh `date -d tomorrow +%Y%m%d` > $blogfile
-    # touch $blogfile
+    # alias duh1='du -h --max-depth=1'
     export blogname=$((12578*2-$((($(date +%s)-$(date --date="19851018" +%s) )/86400))))-`date +%V%a%y`-`date +%Y%m%d`
     export blogfile=$dbg/$blogname
-    touch $blogfile
+elif [  -n "$(uname -a | grep -i android)" ]; then
+    export dbg=$HOME/blog
+    export dcm=$HOME/command
+    export PATH=$dcm:$PATH
+    export blogname=$((12578*2-$((($(date +%s)-$(date --date="19851018" +%s) )/86400))))-`date +%V%a%y`-`date +%Y%m%d`
+    export blogfile=$dbg/$blogname
 elif [  -n "$(uname -a | grep -i centos)" ]; then
     yum update
 elif [  -n "$(uname -a | grep -i darwin)" ]; then
     alias duh1='du -hd1'
     alias ll='ls -la'
-    # tomorrow
-    begin_second=`date -jf %Y%m%d 19851018 +%s`
-    now_second=`date -v+1d  +%s`
-    week_day=`date -v+1d +%V%a%y`
-    date_day=`date  -v+1d +%Y%m%d`
-    live_day=$((($now_second-$begin_second)/86400))
-    remaining_day=$((12578*2-$live_day))
-    blogname=$remaining_day-$week_day-$date_day
-    blogfile=$dbg/$blogname
-    touch $blogfile
     # today
     begin_second=`date -jf %Y%m%d 19851018 +%s`
     now_second=`date +%s`
@@ -77,12 +64,6 @@ elif [  -n "$(uname -a | grep -i darwin)" ]; then
     remaining_day=$((12578*2-$live_day))
     export blogname=$remaining_day-$week_day-$date_day
     export blogfile=$dbg/$blogname
-    touch $blogfile
-elif [  -n "$(uname -a | grep -i android)" ]; then
-    echo android
-    export dbg=$HOME/blog
-    export dcm=$HOME/command
-    export PATH=$dcm:$PATH
 else
     echo Unknown system
 fi
@@ -109,3 +90,4 @@ export PATH=$PATH:${ANDROID_HOME}/tools
 # source $HOME/4T/bin/setupenv.bash
 # export WORK_HOME=$HOME/.virtualenvs
 # source /usr/local/bin/virtualenvwrapper.sh
+
