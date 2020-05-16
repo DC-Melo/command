@@ -5,11 +5,18 @@ else
     today=$1
 fi
 
-if [  -n "$(uname -a | grep -i -E 'ubuntu|android')" ]; then
+if [  -n "$(uname -a | grep -i ubuntu)" ]; then
     begin_second=`date --date="19851018" +%s`
     now_second=`date -d "$today" +%s`
     WeekDay=`date -d $today +%V%a%y`
     DateDay=`date -d $today +%Y%m%d`
+elif [  -n "$(uname -a | grep -i andorid)" ]; then
+    begin_second=`date --date="19851018" +%s`
+    now_second=`date -d "$today" +%s`
+    WeekDay=`date -d $today +%V%a%y`
+    DateDay=`date -d $today +%Y%m%d`
+    $dcm="$HOME/command"
+    $dbg="$HOME/blog"
 elif [  -n "$(uname -a | grep -i centos)" ]; then
     echo centos system, check shell
 elif [  -n "$(uname -a | grep -i darwin)" ]; then
@@ -25,8 +32,7 @@ RemainingDay=$((12578*2-$LiveDay))
 
 echo Today is: $today $WeekDay, Live days: $LiveDay days,Remaining Days: $RemainingDay days
 echo $RemainingDay-$WeekDay-$DateDay
-# touch $RemainingDay-$WeekDay-$DateDay
+export blogname=$RemainingDay-$WeekDay-$DateDay
 
-ebbinghaus.sh $today > $RemainingDay-$WeekDay-$DateDay
-
+$dcm/ebbinghaus.sh $today > $blogname
 
