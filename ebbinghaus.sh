@@ -77,7 +77,7 @@ else
     echo Unknown system
 fi
 blogname=$RemainingDay-$WeekDay-$DateDay
-echo "mutt -s $blogname melo.dachor@gmail.com < $dbg/$blogname"
+echo "mutt -s $blogname melo.dachor@gmail.com < \$dbg/$blogname"
 echo ""
 echo "SUNRISE:"
 echo "MORNING:"
