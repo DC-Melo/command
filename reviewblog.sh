@@ -15,8 +15,8 @@ elif [  -n "$(uname -a | grep -i android)" ]; then
     now_second=`date -d "$today" +%s`
     WeekDay=`date -d $today +%V%a%y`
     DateDay=`date -d $today +%Y%m%d`
-    export $dcm=$HOME/command
-    export $dbg=$HOME/blog
+    export $dcm="$HOME/command"
+    export $dbg="$HOME/blog"
 elif [  -n "$(uname -a | grep -i centos)" ]; then
     echo centos system, check shell
 elif [  -n "$(uname -a | grep -i darwin)" ]; then
