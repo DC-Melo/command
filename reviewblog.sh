@@ -1,6 +1,18 @@
 #!/usr/bin/env bash
+cd $dbg
 if [ ! -n "$1" ] ;then
     today=`date +%Y%m%d`
+elif echo $1 | grep -q '[^0-9]'; then
+    grep -rn "$1" $dbg
+    read -p "Do you wish to open the bolg? please input yes/no:" yn
+    case $yn in
+        [Yy]* ) 
+            reviewfile=`grep -l $1  $dbg/* |sort -r`
+            vim $reviewfile
+            exit 1;;
+        [Nn]* ) exit 1;;
+        * ) exit 1;;
+    esac
 else
     today=$1
 fi
@@ -38,8 +50,6 @@ if [ ! -f "$blogfile" ];then
 	echo creat blog $blogfile
 fi
 
-# echo $today
-cd $dbg
 reviewfile=`grep -l $today  $dbg/* |sort -r`
 # echo $reviewfile
 vim $reviewfile
