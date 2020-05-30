@@ -9,10 +9,11 @@ if [ ! -n "$1" ] ;then
     today=`date +%Y%m%d`
 elif echo $1 | grep -q '[^0-9]'; then
     grep -rn "$1" $dbg
+    reviewfile=`grep -l $1  $dbg/* |sort -r`
+    echo -e "${reviewfile//\ /\\n}"
     read -p "Do you wish to open the bolg? please input yes/no:" yn
     case $yn in
         [Yy]* ) 
-            reviewfile=`grep -l $1  $dbg/* |sort -r`
             vim $reviewfile
             exit 1;;
         [Nn]* ) exit 1;;
@@ -54,6 +55,6 @@ if [ ! -f "$blogfile" ];then
 fi
 
 reviewfile=`grep -l $today  $dbg/* |sort -r`
-# echo $reviewfile
+echo -e "${reviewfile//\ /\\n}"
 vim $reviewfile
 
