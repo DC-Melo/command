@@ -7,7 +7,9 @@ cd $dbg
 
 if [ ! -n "$1" ] ;then
     today=`date +%Y%m%d`
-elif echo $1 | grep -q '[^0-9]'; then
+elif echo $1 | grep -Eq "[0-9]{4}[0-9]{2}[0-9]{2}"; then 
+    today=$1
+else
     grep -rn "$1" $dbg
     reviewfile=`grep -l $1  $dbg/* |sort -r`
     echo -e "${reviewfile//\ /\\n}"
@@ -19,8 +21,6 @@ elif echo $1 | grep -q '[^0-9]'; then
         [Nn]* ) exit 1;;
         * ) exit 1;;
     esac
-else
-    today=$1
 fi
 
 if [  -n "$(uname -a | grep -i ubuntu)" ]; then
