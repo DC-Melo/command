@@ -65,12 +65,12 @@ if [  -n "$(uname -a | grep -i -E 'ubuntu|android')" ]; then
 elif [  -n "$(uname -a | grep -i centos)" ]; then
     echo centos
 elif [  -n "$(uname -a | grep -i darwin)" ]; then
-    echo -e -n "@"`date -j  -v-1d -f "%Y%m%d" "$DateDay" "+%Y%m%d"`" → ??? → "
-    echo -e -n "@"`date -j  -v-2d -f "%Y%m%d" "$DateDay" "+%Y%m%d"`" → ??? → "
-    echo -e -n "@"`date -j  -v-4d -f "%Y%m%d" "$DateDay" "+%Y%m%d"`" → ??? → "
-    echo -e -n "@"`date -j  -v-7d -f "%Y%m%d" "$DateDay" "+%Y%m%d"`" → ??? → "
-    echo -e -n "@"`date -j -v-15d -f "%Y%m%d" "$DateDay" "+%Y%m%d"`" → ??? → "
-    echo -e -n "@"`date -j -v-31d -f "%Y%m%d" "$DateDay" "+%Y%m%d"`" → ??? → "
+    echo -e -n "@"`date -j  -v+1d -f "%Y%m%d" "$DateDay" "+%Y%m%d"`" → ??? → "
+    echo -e -n "@"`date -j  -v+2d -f "%Y%m%d" "$DateDay" "+%Y%m%d"`" → ??? → "
+    echo -e -n "@"`date -j  -v+4d -f "%Y%m%d" "$DateDay" "+%Y%m%d"`" → ??? → "
+    echo -e -n "@"`date -j  -v+7d -f "%Y%m%d" "$DateDay" "+%Y%m%d"`" → ??? → "
+    echo -e -n "@"`date -j -v+15d -f "%Y%m%d" "$DateDay" "+%Y%m%d"`" → ??? → "
+    echo -e -n "@"`date -j -v+31d -f "%Y%m%d" "$DateDay" "+%Y%m%d"`" → ??? → "
     echo ""
     # blogname=$((12578*2-$((($(date --date=$today +%s)-$(date --date="19851018" +%s) )/86400))))-`date --date=$today +%V%a%y`-`date --date=$today +%Y%m%d`
 else
